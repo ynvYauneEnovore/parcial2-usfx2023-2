@@ -1,13 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import PanelView from "@/views/PanelView.vue";
-import LoginView from "@/views/LoginView.vue";
-import LandingView from "@/views/LandingView.vue";
-import ProductoView from "@/views/ProductoView.vue";
-import CatproductoView from "@/views/catproductoView.vue";
-import Galeria from '@/components/landing/galeriaVer.vue';
-
-
-import AyudaView from "@/views/AyudaView.vue";
 import { useAuthStore } from "@/stores";
 import { getTokenFromLocalStorage } from "@/helpers";
 
