@@ -16,7 +16,10 @@
             <img class="h-auto max-w-full rounded-lg" src="/images/4.jpg" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="/images/5.jpg" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="/images/5.png" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="/images/6.jpg" alt="">
         </div>
         <div>
             <img class="h-auto max-w-full rounded-lg" src="/images/7.jpg" alt="">

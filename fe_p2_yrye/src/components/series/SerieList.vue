@@ -38,7 +38,7 @@ async function crearProducto() {
             duracion: duracion.value,
             fecha_estreno: fecha_estreno.value,
         })
-        .then(() => router.push('/'));
+        .then(() => router.push('/ver'));
     await getProducto();
     document.querySelector('[data-modal-hide="authentication-modal"]').click();
     toast.success("Serie creada exitosamente!", {
