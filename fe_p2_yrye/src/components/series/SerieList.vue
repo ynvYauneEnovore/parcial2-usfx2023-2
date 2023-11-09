@@ -53,7 +53,7 @@ async function crearProducto() {
 }
 
 function toEdit(id: number) {
-    router.push(`/producto/editar/${id}`)
+    router.push(`/serie/editar/${id}`)
 }
 
 async function toDelete(id: number) {
@@ -345,7 +345,8 @@ const goToPage = (pageNumber) => {
             </div>
         </div>
     </div>
-</div></template>
+</div>
+</template>
 
 <style scoped>.container {
     margin: 2%;
