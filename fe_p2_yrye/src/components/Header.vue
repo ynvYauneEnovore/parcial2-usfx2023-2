@@ -1,95 +1,62 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-const location = useRoute();
-import { useAuthStore } from "@/stores/index";
-const authStore = useAuthStore();
+import { ref, onMounted } from 'vue';
+import { initFlowbite } from 'flowbite'
+import 'flowbite';
 
+onMounted(() => {
+    initFlowbite();
+});
 </script>
 
-
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top">
-<div class="nabvars">
-      <RouterLink to="/" class="navbar-brand">
-        <lord-icon
-          src="../src/assets/json/config.json"
-          trigger="loop"
-          state="loop-cog"
-          colors="primary:#000"
-          style="width:40px;height:40px">
-      </lord-icon>
-      </RouterLink>
-      <RouterLink v-if="!authStore.token" to="/login" class="btn custom-btn d-lg-none ms-auto me-4">
-        Iniciar Sesión
-      </RouterLink>
+    <nav class="bg-gray-900 border-gray-200 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <a href="/" class="flex items-center">
+                <img src="/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">USFX - SIS257</span>
+            </a>
+            <div class="flex items-center">
+                <a href="https://api.whatsapp.com/message/BTD6XIGPZ65SL1"
+                    class="mr-6 text-sm  text-gray-500 dark:text-white hover:underline" target="_blank">(+591)
+                    734-671-57</a>
+            </div>
+        </div>
+    </nav>
+    <nav class="bg-gray-50 dark:bg-gray-700">
+        <div class="max-w-screen-xl px-4 py-3 mx-auto">
+            <div class="flex items-center">
+                <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+                    <li>
+                        <a href="/ver" class="text-gray-900 dark:text-white hover:underline flex flex-col items-center">
+                            <div class="">Ver</div>
+                            <lord-icon src="./src/assets/json/ver.json" trigger="hover"
+                                style="width:40px;height:40px"></lord-icon>
+                        </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-
-          <li class="nav-item">
-            <RouterLink :to="{ path: '/ayuda' }">
-              <lord-icon
-    src="https://cdn.lordicon.com/ojnjgkun.json"
-    trigger="hover"
-    colors="primary:#ffffff"
-    style="width:50px;height:50px">
-</lord-icon>
-            </RouterLink>
-            &nbsp;&nbsp;
-          </li>
-          <li class="nav-item">
-            <RouterLink v-if="authStore.token" to="/catproducto">
-              Categoría</RouterLink>
-          </li>
-          &nbsp;&nbsp;
-          <li class="nav-item">
-            <RouterLink v-if="authStore.token" to="/producto">Productos
-            </RouterLink>
-          </li>
-
-        </ul>
-        <RouterLink v-if="!authStore.token" to="/login" class="">
-          <lord-icon
-            src="../src/assets/json/login.json"
-            trigger="hover"
-            colors="primary:#fff"
-            style="width:40px;height:40px">
-        </lord-icon>
-        </RouterLink>
-        <a v-else @click="authStore.logout()" class="btn btn-danger">
-          Cerrar Sesión
-        </a>
-      </div>
-    </div>
-  </nav>
+                    </li>
+                    <li>
+                        <a href="/ver" class="text-gray-900 dark:text-white hover:underline">
+                            <div class="">Crear</div>
+                            <lord-icon src="./src/assets/json/crear.json" trigger="hover" style="width:40px;height:40px">
+                            </lord-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ver" class="text-gray-900 dark:text-white hover:underline">
+                            <div class="">Editar</div>
+                            <lord-icon src="./src/assets/json/editar.json" trigger="hover" style="width:40px;height:40px">
+                            </lord-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ver" class="text-gray-900 dark:text-white hover:underline">
+                            <div class="">Eliminar</div>
+                            <lord-icon src="./src/assets/json/eliminar.json" trigger="hover" style="width:40px;height:40px">
+                            </lord-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </template>
-<style>
-.smaller-image {
-  width: 100px;
-  /* Ajusta el ancho según tus necesidades */
-  height: auto;
-  /* Ajusta la altura proporcionalmente */
-}
-.nabvars {
-  background-color: rgba(0, 145, 255, 0.722);
-  width: 100%;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  border-radius: 10px; 
-  padding-left: 5%; 
-  padding-right: 5%;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  border: 2px solid #007890; 
-
-}
-
-
-
-</style>
